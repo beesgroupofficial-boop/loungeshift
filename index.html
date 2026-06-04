@@ -33,7 +33,6 @@
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   body { background: var(--bg); color: var(--text); font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; min-height: 100dvh; padding-bottom: calc(16px + env(safe-area-inset-bottom)); }
 
-  /* Header */
   .header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 14px 16px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
   .header-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
   .app-title { font-size: 18px; font-weight: 800; letter-spacing: 0.02em; }
@@ -42,23 +41,19 @@
   .month-nav button { background: var(--surface2); border: 1px solid var(--border2); color: var(--text); border-radius: var(--radius-sm); width: 34px; height: 34px; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: 600; }
   .month-nav button:active { background: #e5e3ef; }
   .month-label { font-size: 15px; font-weight: 700; min-width: 96px; text-align: center; }
-
-  /* Role tabs (キャスト / ボーイ) */
   .role-tabs { display: flex; }
   .role-tab { flex: 1; padding: 11px 0; text-align: center; font-size: 14px; font-weight: 600; cursor: pointer; color: var(--text2); border-bottom: 3px solid transparent; transition: all 0.18s; }
   .role-tab.active.cast { color: var(--pink); border-color: var(--pink); }
   .role-tab.active.boy  { color: var(--blue); border-color: var(--blue); }
 
-  /* Main */
   .main { padding: 16px; max-width: 700px; margin: 0 auto; }
 
-  /* View tabs (入力 / 一覧) */
   .view-tabs { display: flex; gap: 6px; margin-bottom: 16px; }
   .view-tab { flex: 1; padding: 9px 0; text-align: center; font-size: 13px; font-weight: 600; cursor: pointer; border-radius: var(--radius-sm); border: 1.5px solid var(--border2); background: var(--surface); color: var(--text2); transition: all 0.15s; }
   .view-tab.active.cast { background: var(--pink-light); color: var(--pink); border-color: var(--pink-border); }
   .view-tab.active.boy  { background: var(--blue-light); color: var(--blue); border-color: var(--blue-border); }
 
-  /* Summary cards */
+  /* Summary — 入力タブのみ */
   .summary { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
   .sum-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 14px 16px; }
   .sum-card.alert-cast { border-color: var(--pink-border); background: var(--pink-light); }
@@ -67,7 +62,6 @@
   .sum-val { font-size: 28px; font-weight: 800; color: var(--text); }
   .sum-val.alert { color: var(--gold); }
 
-  /* Add member */
   .add-row { display: flex; gap: 8px; margin-bottom: 12px; }
   .add-row input { flex: 1; background: var(--surface); border: 1.5px solid var(--border2); color: var(--text); border-radius: var(--radius-sm); padding: 10px 13px; font-size: 15px; outline: none; transition: border-color 0.15s; }
   .add-row input:focus { border-color: var(--pink); }
@@ -76,7 +70,6 @@
   .add-row button.boy-btn { background: var(--blue); }
   .add-row button:active { opacity: 0.85; }
 
-  /* Member cards */
   .member-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
   .member-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
   .member-header { display: flex; align-items: center; padding: 10px 12px; gap: 8px; border-bottom: 1px solid var(--border); background: var(--surface2); }
@@ -94,7 +87,6 @@
   .day-btn.on.cast { background: var(--pink); border-color: var(--pink); color: #fff; font-weight: 800; }
   .day-btn.on.boy  { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 800; }
 
-  /* Calendar */
   .cal-wrap { margin-bottom: 16px; }
   .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
   .cal-dow { text-align: center; font-size: 11px; color: var(--text3); padding: 5px 0; font-weight: 600; }
@@ -109,7 +101,6 @@
   .cal-count.boy  { background: var(--blue-light); color: var(--blue); }
   .cal-names { font-size: 10px; color: var(--text2); line-height: 1.6; }
 
-  /* Modal overlay */
   .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 200; align-items: flex-end; justify-content: center; }
   .modal-overlay.open { display: flex; }
   .modal { background: var(--surface); border-radius: var(--radius) var(--radius) 0 0; width: 100%; max-width: 700px; padding: 20px 20px calc(20px + env(safe-area-inset-bottom)); }
@@ -122,9 +113,7 @@
   .copy-btn.cast { background: var(--pink); }
   .copy-btn.boy  { background: var(--blue); }
   .copy-btn:active { opacity: 0.85; }
-  .copy-done { color: #fff; }
 
-  /* Loading */
   .loading { text-align: center; padding: 48px; color: var(--text2); font-size: 14px; }
   .dot-loader { display: inline-flex; gap: 6px; }
   .dot-loader span { width: 7px; height: 7px; background: var(--pink); border-radius: 50%; animation: dot 1.2s infinite; }
@@ -165,7 +154,6 @@
   <div id="panel-boy"  class="panel"></div>
 </div>
 
-<!-- Modal -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
   <div class="modal">
     <div class="modal-header">
@@ -196,38 +184,62 @@ const db  = getFirestore(app);
 let currentYear  = new Date().getFullYear();
 let currentMonth = new Date().getMonth();
 let currentRole  = 'cast';
-let currentView  = 'input'; // 'input' | 'list'
+let currentView  = 'input';
 let saving       = false;
-let state = { cast: { members: [], shifts: {} }, boy: { members: [], shifts: {} } };
+
+// members は月をまたいで共通。shifts のみ月別。
+let members = { cast: [], boy: [] };
+let shifts  = { cast: {}, boy: {} }; // shifts[role][name] = [日付, ...]
 
 const MONTHS_JP = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
 const DOW = ['日','月','火','水','木','金','土'];
 
-function docId() { return `${currentYear}-${String(currentMonth+1).padStart(2,'0')}`; }
+function shiftDocId() { return `${currentYear}-${String(currentMonth+1).padStart(2,'0')}`; }
 
-async function loadMonth() {
+// メンバーを Firestore から読み込み（共通）
+async function loadMembers() {
+  const snap = await getDoc(doc(db, 'config', 'members'));
+  if (snap.exists()) {
+    const d = snap.data();
+    members.cast = d.cast || [];
+    members.boy  = d.boy  || [];
+  }
+}
+
+// シフトを月別に読み込み
+async function loadShifts() {
+  const snap = await getDoc(doc(db, 'shifts', shiftDocId()));
+  if (snap.exists()) {
+    const d = snap.data();
+    shifts.cast = d.cast || {};
+    shifts.boy  = d.boy  || {};
+  } else {
+    shifts.cast = {};
+    shifts.boy  = {};
+  }
+}
+
+async function loadAll() {
   document.getElementById('loading').style.display = 'block';
   document.getElementById('panel-cast').classList.remove('active');
   document.getElementById('panel-boy').classList.remove('active');
-  const snap = await getDoc(doc(db, 'shifts', docId()));
-  if (snap.exists()) {
-    const d = snap.data();
-    state.cast = d.cast || { members: [], shifts: {} };
-    state.boy  = d.boy  || { members: [], shifts: {} };
-  } else {
-    state.cast = { members: [], shifts: {} };
-    state.boy  = { members: [], shifts: {} };
-  }
+  await Promise.all([loadMembers(), loadShifts()]);
   document.getElementById('loading').style.display = 'none';
   render();
 }
 
-async function saveMonth() {
+async function saveMembers() {
+  await setDoc(doc(db, 'config', 'members'), {
+    cast: members.cast, boy: members.boy, updatedAt: new Date().toISOString()
+  });
+}
+
+async function saveShifts() {
   if (saving) return;
   saving = true;
   try {
-    await setDoc(doc(db, 'shifts', docId()), {
-      cast: state.cast, boy: state.boy, updatedAt: new Date().toISOString()
+    await setDoc(doc(db, 'shifts', shiftDocId()), {
+      cast: shifts.cast, boy: shifts.boy, updatedAt: new Date().toISOString()
     });
   } catch(e) { console.error(e); }
   saving = false;
@@ -236,31 +248,30 @@ async function saveMonth() {
 function daysInMonth(y, m) { return new Date(y, m+1, 0).getDate(); }
 function firstDow(y, m)    { return new Date(y, m, 1).getDay(); }
 function getShifts(role, name) {
-  if (!state[role].shifts[name]) state[role].shifts[name] = [];
-  return state[role].shifts[name];
+  if (!shifts[role][name]) shifts[role][name] = [];
+  return shifts[role][name];
 }
 
 window.toggleDay = function(role, name, day) {
   const arr = getShifts(role, name);
   const idx = arr.indexOf(day);
   if (idx === -1) arr.push(day); else arr.splice(idx, 1);
-  render(); saveMonth();
+  render(); saveShifts();
 };
 
 window.addMember = function(role) {
   const inp = document.getElementById('inp-' + role);
   const n = inp.value.trim();
-  if (!n || state[role].members.includes(n)) { inp.value = ''; return; }
-  state[role].members.push(n);
+  if (!n || members[role].includes(n)) { inp.value = ''; return; }
+  members[role].push(n);
   inp.value = '';
-  render(); saveMonth();
+  render(); saveMembers();
 };
 
 window.deleteMember = function(role, name) {
-  if (!confirm(`「${name}」を削除しますか？`)) return;
-  state[role].members = state[role].members.filter(m => m !== name);
-  delete state[role].shifts[name];
-  render(); saveMonth();
+  if (!confirm(`「${name}」を削除しますか？\n全月のシフトデータは残ります`)) return;
+  members[role] = members[role].filter(m => m !== name);
+  render(); saveMembers();
 };
 
 window.switchRole = function(role) {
@@ -280,13 +291,13 @@ window.changeMonth = function(delta) {
   if (currentMonth > 11) { currentMonth = 0; currentYear++; }
   if (currentMonth < 0)  { currentMonth = 11; currentYear--; }
   document.getElementById('month-label').textContent = `${currentYear}年 ${MONTHS_JP[currentMonth]}`;
-  loadMonth();
+  loadShifts().then(render);
 };
 
 // Modal
 let modalCurrentNames = '';
-window.openDayModal = function(role, day, total) {
-  const attending = state[role].members.filter(n => getShifts(role, n).includes(day));
+window.openDayModal = function(role, day) {
+  const attending = members[role].filter(n => getShifts(role, n).includes(day));
   const accent = role === 'cast' ? 'cast' : 'boy';
   document.getElementById('modal-title').textContent = `${currentMonth+1}月${day}日 出勤メンバー`;
   const namesEl = document.getElementById('modal-names');
@@ -306,7 +317,6 @@ window.openDayModal = function(role, day, total) {
   copyBtn.disabled = attending.length === 0;
   document.getElementById('modal-overlay').classList.add('open');
 };
-
 window.closeModal = function(e) {
   if (e.target === document.getElementById('modal-overlay')) closeModalDirect();
 };
@@ -318,13 +328,10 @@ window.copyNames = async function() {
   try {
     await navigator.clipboard.writeText(modalCurrentNames);
   } catch(e) {
-    // fallback
     const ta = document.createElement('textarea');
     ta.value = modalCurrentNames;
     ta.style.position = 'fixed'; ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.select(); document.execCommand('copy');
-    document.body.removeChild(ta);
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
   }
   const btn = document.getElementById('copy-btn');
   btn.textContent = 'コピーしました！';
@@ -336,19 +343,19 @@ function buildPanel(role) {
   const accent = isGirl ? 'cast' : 'boy';
   const total  = daysInMonth(currentYear, currentMonth);
   const fd     = firstDow(currentYear, currentMonth);
+  const btnClass = isGirl ? '' : 'boy-btn';
 
+  // 出勤数集計（入力タブ用）
   let h1 = 0, h2 = 0;
-  state[role].members.forEach(name => {
+  members[role].forEach(name => {
     const s = getShifts(role, name);
     h1 += s.filter(d => d >= 1  && d <= 15).length;
     h2 += s.filter(d => d >= 16 && d <= total).length;
   });
-
   const alertClass1 = h1 >= 10 ? `alert-${accent}` : '';
   const alertClass2 = h2 >= 10 ? `alert-${accent}` : '';
   const valClass1   = h1 >= 10 ? 'alert' : '';
   const valClass2   = h2 >= 10 ? 'alert' : '';
-  const btnClass    = isGirl ? '' : 'boy-btn';
 
   let html = `
   <div class="view-tabs">
@@ -356,8 +363,8 @@ function buildPanel(role) {
     <div class="view-tab ${currentView==='list'  ? 'active '+accent : ''}" onclick="switchView('list')">📅 出勤一覧</div>
   </div>`;
 
-  // Summary always visible
-  html += `
+  // ── 入力タブ ──
+  html += `<div class="view-panel ${currentView==='input' ? 'active' : ''}">
   <div class="summary">
     <div class="sum-card ${alertClass1}">
       <div class="sum-label">1〜15日<br>出勤数（延べ）</div>
@@ -367,10 +374,7 @@ function buildPanel(role) {
       <div class="sum-label">16〜${total}日<br>出勤数（延べ）</div>
       <div class="sum-val ${valClass2}">${h2}<span style="font-size:14px;font-weight:500;color:var(--text2)"> 日</span></div>
     </div>
-  </div>`;
-
-  // ── 入力タブ ──
-  html += `<div class="view-panel ${currentView==='input' ? 'active' : ''}">
+  </div>
   <div class="divider">メンバー管理</div>
   <div class="add-row">
     <input id="inp-${role}" class="${isGirl ? '' : 'boy-mode'}" placeholder="名前を入力して追加"
@@ -379,7 +383,7 @@ function buildPanel(role) {
   </div>
   <div class="member-list">`;
 
-  state[role].members.forEach(name => {
+  members[role].forEach(name => {
     const s  = getShifts(role, name);
     const c1 = s.filter(d => d <= 15).length;
     const c2 = s.filter(d => d >= 16 && d <= total).length;
@@ -400,18 +404,17 @@ function buildPanel(role) {
     }
     html += `</div></div>`;
   });
-  html += `</div></div>`; // close member-list + view-panel
+  html += `</div></div>`;
 
   // ── 出勤一覧タブ ──
   html += `<div class="view-panel ${currentView==='list' ? 'active' : ''}">
-  <div class="divider">日別出勤一覧 <span style="font-size:11px;font-weight:400;color:var(--text3)">（日付をタップで詳細）</span></div>
+  <div class="divider">日別出勤一覧 <span style="font-size:11px;font-weight:400;color:var(--text3)">（日付をタップで詳細・コピー）</span></div>
   <div class="cal-wrap"><div class="cal-grid">`;
-
   DOW.forEach(d => { html += `<div class="cal-dow">${d}</div>`; });
   for (let i = 0; i < fd; i++) html += `<div class="cal-cell empty"></div>`;
   for (let d = 1; d <= total; d++) {
-    const attending = state[role].members.filter(n => getShifts(role, n).includes(d));
-    html += `<div class="cal-cell" onclick="openDayModal('${role}',${d},${total})">
+    const attending = members[role].filter(n => getShifts(role, n).includes(d));
+    html += `<div class="cal-cell" onclick="openDayModal('${role}',${d})">
       <div class="cal-date">${d}</div>
       <div class="cal-count ${accent}">${attending.length}名</div>
       <div class="cal-names">${attending.slice(0,3).join('<br>')}${attending.length > 3 ? `<br>+${attending.length-3}` : ''}</div>
@@ -419,7 +422,7 @@ function buildPanel(role) {
   }
   const rem = (fd + total) % 7;
   if (rem > 0) for (let i = 0; i < 7 - rem; i++) html += `<div class="cal-cell empty"></div>`;
-  html += `</div></div></div>`; // close cal-grid + cal-wrap + view-panel
+  html += `</div></div></div>`;
 
   return html;
 }
@@ -433,7 +436,7 @@ function render() {
 document.getElementById('month-label').textContent = `${currentYear}年 ${MONTHS_JP[currentMonth]}`;
 document.getElementById('prev-btn').onclick = () => changeMonth(-1);
 document.getElementById('next-btn').onclick = () => changeMonth(1);
-loadMonth();
+loadAll();
 </script>
 </body>
 </html>
